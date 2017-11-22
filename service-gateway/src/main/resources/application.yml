@@ -1,0 +1,20 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: demo-service-gateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+
+zuul:
+  routes:
+    rest:
+      path: /rest/**
+      serviceId: demo-service-consumer
+    feign:
+      path: /feign/**
+      serviceId: demo-service-consumer-feign

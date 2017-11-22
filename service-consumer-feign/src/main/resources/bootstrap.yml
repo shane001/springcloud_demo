@@ -1,0 +1,15 @@
+# for spring cloud config client
+spring:
+  application:
+    name: demo-service-consumer-feign
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: demo-service-config
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
